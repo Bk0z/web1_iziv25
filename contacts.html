@@ -3,37 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Задание 1</title>
+    <title>Контакты</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <nav>
-        <ul>
-            <li><a href="index.html"><img src="img/Frame 90.png"</a></li>
-            <li><a href="index.html">О себе</a></li>
-            <li><a href="skils.html">Компетенции</a></li>
-            <li><a href="summary.html">Резюме</a></li>
-            <li><a href="index.html">Портфолио</a></li>
-            <li><a href="contacts.html">Контакты</a></li>
+<body class="body r">
+    <nav class="nav">
+        <ul class="nav-ul">
+            <li>><a href="index.html"><img src="img/Frame 90.png" width="250"</a></li>
+            <li class="li"><a href="index.html">О себе</a></li>
+            <li class="li"><a href="skils.html">Компетенции</a></li>
+            <li class="li"><a href="summary.html">Резюме</a></li>
+            <li class="li"><a href="index.html">Портфолио</a></li>
+            <li class="li"><a href="contacts.html">Контакты</a></li>
         </ul>
     </nav>
     <header>
+        <div class="input0range">
         <h1>Веб - технологии</h1>
-        <h2>Университет "Дубна"</h2>
-        <h3>Есть вопросы?</h3>
+        </div>
     </header>
-    <form>
-        <div>
-            <label for "question">Как Вам удобно получить ответ:</label>
+    <form  class="inputBorderForm">
+        <div class="flex-input-text">
+            <p>Как Вам удобно получить ответ:</p>
+            <label>
             <input type="radio" name="question" value="email id="question1" checked>
-            <label for="email">по почте</label>
+            по почте</label>
+             <label>
             <input type="radio" name="question" value="phone" id="question2">
-            <label for="phone">по телефону</label>
+            по телефону</label>
+             <label>
             <input type="radio" name="question" value="outher" id="question3">
-            <label for="outher">не нужно отвечать</label>
+            не нужно отвечать</label>
         </div>
         <div>
             <label for "question">Укажите тему вопроса</label>
-            <select name="category" id="user_category">>
+            <select name="category" id="user_category" class="input0range">>
             <option value="work">Работа</option>
             <option value="family">Семья</option>
             <option value="uni-dubna">Университет</option>
@@ -41,33 +45,36 @@
             <option value="other_questions">Другие вопросы</option>
             </select>
         </div>
-        <div>
-            <label for "question">И ещё один вопрос</label>
+        <div class="flex-input-text">
+            <p>И ещё один вопрос</p>
+            <label>
             <input type="checkbox" id="checkbox" name="checkbox">
-            <label for="checkbox">может так</label>
+            может так </label>
+            <label>
             <input type="checkbox" id="checkbox1" name="checkbox">
-            <label for="checkbox1">или не так</label>
+            или не так</label>
+            <label>
             <input type="checkbox" id="checkbox2" name="checkbox">
-            <label for="checkbox2">иначе</label>
+            иначе</label>
         </div>
         <div>
             <label for "name">Ваше имя</label>
-            <input type="text" name="name" id="user_name">
+            <input type="text" name="name" id="user_name" class="input0range">
         </div>
         <div>
             <label for "email">Адрес почты</label>
-            <input type="text" name="email" id="user_email">
+            <input type="text" name="email" id="user_email" class="input0range">
         </div>
         <div>
             <label for "phone">Номер телефона</label>
-            <input type="text" name="phone" id="user_phone">
+            <input type="text" name="phone" id="user_phone" class="input0range">
         </div>
         <div>
             <label for "message">Сообщение:</label><br>
             <textarea name="message" id="user_message" cols="30" rows="5"></textarea>
         </div>
         <div>
-            <input type="submit" value="Отправить">
+            <input type="submit" value="Отправить" class="inputBorderForm">
         </div>
 
 
@@ -75,11 +82,11 @@
 
     </form>
     <div>
-        <img src="img/vk.png" width="100">
-        <img src="img/tg.png" width="100">
-        <img src="img/inst.png" width="100">
+        <img src="img/vk.png" width="80">
+        <img src="img/tg.png" width="80">
+        <img src="img/inst.png" width="80">
     </div>
-    <footer>
+    <footer class="footer">
             Сайт разработан Изосимовым Ильёй, Copyright © 2026
     </footer>
 </body>

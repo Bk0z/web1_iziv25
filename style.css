@@ -1,0 +1,75 @@
+.input0range{
+    background-color: orange;
+    border-color: orange;
+    border-radius: 20px;
+    padding: 8px;
+    margin: 5px 0 15px 0;
+    width: 100%;
+    
+}
+.inputBorderForm{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    border: 2px solid orange;
+    border-color: orange;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 500px;
+    box-shadow: 0px 0px 25px 0px orange;   
+}
+.flex-input-text{
+    display: flex;
+    flex-direction: column;
+    
+}
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+.inputBorderForm input[type="submit"] {
+    background-color: orange;
+    border-color: orange;
+    border-radius: 20px;
+    padding: 8px;
+    margin: 5px;
+    width: 100%;
+}
+.footer {
+    position: absolute;
+    background-color: rgb(226, 180, 94);
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    bottom: 0;
+    height: 80px;
+    
+}
+.nav {
+    background-color: rgb(226, 180, 94);
+    width: 100%;
+    text-align: left;
+    padding: 15px 0;
+    
+}
+.nav-ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    
+}
+.li {
+    background-color: rgb(0, 255, 204);
+    border-color: rgb(0, 255, 204);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 20px;
+    padding: 8px;
+    margin: 0px;
+}
