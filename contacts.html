@@ -74,6 +74,16 @@
         <div>
             <label class="row" for="phone">Номер телефона
             <input type="text" name="phone" id="user_phone" class="input0range"></label>
+
+            <script>
+            const input = document.getElementById('user_phone');
+
+            function handler() {
+                alert('Спасибо!');
+            }
+
+            input.addEventListener('click', handler);
+            </script>
         </div>
         <div>
             <label class="row" for="message">Сообщение:</label><br>
