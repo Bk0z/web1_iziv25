@@ -19,6 +19,7 @@
             <li><a href="summary.html">Резюме</a></li>
             <li><a href="index.html">Портфолио</a></li>
             <li><a href="contacts.html">Контакты</a></li>
+            <li><a href="avito.html">Объявления</a></li>
             <li><a href="register.html">Регистрация</a></li>
         </ul>
     </nav>
@@ -28,11 +29,11 @@
         <h1>Веб - технологии</h1>
         </div>
     </header>
-    <form  class="inputBorderForm">
+    <form class="inputBorderForm" id="contactForm">
         <div class="flex-input-text">
             <p>Как Вам удобно получить ответ:</p>
             <label>
-            <input type="radio" name="question" value="email id="question1" checked>
+            <input type="radio" name="question" value="email" id="question1" checked>
             по почте</label>
              <label>
             <input type="radio" name="question" value="phone" id="question2">
@@ -42,30 +43,18 @@
             не нужно отвечать</label>
         </div>
         <div>
-            <label for "question">Укажите тему вопроса</label>
-            <select name="category" id="user_category" class="input0range">>
-            <option value="work">Работа</option>
-            <option value="family">Семья</option>
+            <label for="user_category">Укажите тему вопроса</label>
+            <select name="category" id="user_category" class="input0range">
+            <option value="Работа">Работа</option>
+            <option value="Семья">Семья</option>
             <option value="uni-dubna">Университет</option>
             <option value="business">Коммерческое предложение</option>
             <option value="other_questions">Другие вопросы</option>
             </select>
         </div>
-        <div class="flex-input-text">
-            <p>И ещё один вопрос</p>
-            <label>
-            <input type="checkbox" id="checkbox" name="checkbox">
-            может так </label>
-            <label>
-            <input type="checkbox" id="checkbox1" name="checkbox">
-            или не так</label>
-            <label>
-            <input type="checkbox" id="checkbox2" name="checkbox">
-            иначе</label>
-        </div>
         <div>
             <label class="row" for="name">Ваше имя
-            <input type="text" name="name" class="input0range"></label>
+            <input type="text" name="name" id="name" class="input0range"></label>
         </div>
         <div>
             <label class="row" for="email">Адрес почты
@@ -87,16 +76,55 @@
         </div>
         <div>
             <label class="row" for="message">Сообщение:</label><br>
-            <textarea name="message" id="user_message" cols="30" rows="5"></textarea>
+            <textarea name="message" id="message" cols="30" rows="5"></textarea>
         </div>
         <div>
             <input type="submit" value="Отправить" class="inputBorderForm">
         </div>
 
-
-
-
     </form>
+
+    <div class="inputBorderForm" id="result" style="display: none;">
+        <h2>Проверьте свои данные</h2>
+        <div id="resultContent"></div>
+    </div>
+
+    <script>
+        const contactForm = document.getElementById('contactForm');
+
+        contactForm.onsubmit = function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('user_email').value;
+            const phone = document.getElementById('user_phone').value;
+            const message = document.getElementById('message').value;
+            const category = document.getElementById('user_category').value;
+
+            let question = '';
+            const radios = document.getElementsByName('question');
+
+            for (let i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    question = radios[i].value;
+                    break;
+                }
+            }
+
+            const resultHTML =
+                '<b>Имя:</b> ' + (name || 'не указано') + '<br>' +
+                '<b>Почта:</b> ' + (email || 'не указана') + '<br>' +
+                '<b>Телефон:</b> ' + (phone || 'не указан') + '<br>' +
+                '<b>Тема:</b> ' + category + '<br>' +
+                '<b>Способ ответа:</b> ' + question + '<br>' +
+                '<b>Сообщение:</b> ' + (message || 'пусто');
+
+            document.getElementById('resultContent').innerHTML = resultHTML;
+            document.getElementById('result').style.display = 'block';
+        };
+    </script>
+
+    
 <footer>
     <div class="social">
         <a href="https://vk.com/bkmzru"><img src="img/vk.png" width="100"></a>

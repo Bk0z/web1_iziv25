@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Контакты</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Petrona:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="body">
+    <header class="header">
+        <a href="index.html"><img src="img/logo.png" width="150"></a>
+    <nav>
+        <ul>
+            <li><a href="index.html">О себе</a></li>
+            <li><a href="skils.html">Компетенции</a></li>
+            <li><a href="summary.html">Резюме</a></li>
+            <li><a href="index.html">Портфолио</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+            <li><a href="avito.html">Объявления</a></li>
+            <li><a href="register.html">Регистрация</a></li>
+        </ul>
+    </nav>
+    </header>
+    <header>
+        <div class="input0range">
+        <h1>Веб - технологии</h1>
+        </div>
+    </header>
+    <form action="" method="get" class="inputBorderForm" id="announcement-form" enctype="multipart/form-data" onsubmit="f1(); return false;">
+            <div>
+                <label class="row" for="news_header">Заголовок</label>
+                <input type="text" name="title" id="news_header" class="input0range">
+            </div>
+            <div>
+                <label class="row" for="news_text">Текст</label>
+                <textarea name="text" id="news_text" class="input0range" cols="30" rows="8"></textarea>
+            </div>
+            <div>
+                <label class="row" for="news_image">Загрузить файл</label>
+                <input type="file" name="file" id="news_image">
+            </div>
+            <div>
+            <input type="submit" value="Создать" class="inputBorderForm">
+            </div>
+        </form>
+
+
+        <div id="news"></div>
+
+        <script>
+            function f1() {
+                const header = document.getElementById('news_header').value;
+                const text = document.getElementById('news_text').value;
+                const imgFile = document.getElementById('news_image').files[0];
+
+                if (imgFile) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        createPost(header, text, e.target.result);
+                    };
+                    reader.readAsDataURL(imgFile);
+                } else {
+                    createPost(header, text, 'img/chel.png');
+                }
+            }
+
+            function createPost(header, text, imgSrc) {
+                var div_news = document.createElement('form');
+                div_news.className = 'inputBorderForm post-card';
+
+                var now = new Date();
+                var timeString = now.toLocaleTimeString('ru-RU', {hour: '2-digit', minute:'2-digit'}) + ' ' + now.toLocaleDateString('ru-RU');
+
+                div_news.innerHTML =
+                    '<div class="post-main" style="display:flex; align-items:flex-start; gap:16px;">' +
+                        '<div class="post-left" style="flex:0 0 auto;"><img class="post-image" src="' + imgSrc + '" style="display:block; width:150px; height:auto;"></div>' +
+                        '<div class="post-right" style="flex:1; min-width:0;">' +
+                            '<h2 class="post-title">' + header + '</h2>' +
+                            '<p class="post-text">' + text + '</p>' +
+                        '</div>' +
+                    '</div>' +
+                    '<div class="post-bottom">' +
+                        '<span class="post-time">' + timeString + '</span>' +
+                        '<span class="post-author">Иванов Иван </span>' +
+                    '</div>';
+
+                document.getElementById('news').appendChild(div_news);
+            }
+        </script>
+<footer>
+    <div class="social">
+        <a href="https://vk.com/bkmzru"><img src="img/vk.png" width="100"></a>
+        <a href="https://t.me/ggBKgg"><img src="img/tg.png" width="100"></a>
+        <a href="https://www.instagram.com/bk.masliny/">
+        <img src="img/inst.png" width="100">
+        <span class="star">*</span></a>
+    </div>
+    <p class="note-meta">* принадлежит компании Meta, признанной экстремистской организацией и запрещённой в РФ</p>
+        <p class="note-meta">Сайт разработал Изосимов Илья, Copyright © 2026</p>
+    </footer>
+</body>
+</html>

@@ -279,3 +279,10 @@ footer {
     text-align: center;
     margin: 0;
 }
+/* стили страницы объявление */
+.card-image {
+    float: left;
+    margin-right: 16px;
+    width: 300px;
+    height: auto;
+}
